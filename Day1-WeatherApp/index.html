@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="theme-toggle" id="themeToggle">
+      <span class="icon" id="themeIcon">🌙</span>
+    </button>
+    
+    
+    <div id="loader" style="display: none;">
+      <img src="https://i.gifer.com/ZZ5H.gif" alt="Loading..." width="80" />
+    </div>
+
+    <h2>Weather App 🌦️</h2>
+
+    <!-- Centered Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="city" placeholder="Enter city name" />
+      <button onclick="getWeather() ">Get Weather</button>
+      <button onclick="getLocationWeather()">📍 Use My Location</button>
+    </div>
+    <div class="forecast-wrapper">
+    
+    
+      <div class="forecast-carousel" id="forecastCarousel">
+        <!-- Forecast cards will be dynamically inserted here -->
+      </div>
+   
+
+    
+    </div>
+    
+
+
+    <!-- Weather Result Goes Here -->
+    <div id="result"></div>
+   
+    <script src="script.js" defer></script>
+
+  </body>
+</html>

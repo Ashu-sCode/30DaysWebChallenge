@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f172a;
+    color: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-image: linear-gradient(to right, #1e293b, #0f172a);
+  }
+  
+  .container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #38bdf8;
+  }
+  
+  #quoteDisplay {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    word-wrap: break-word;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    min-height: 100px;
+  }
+  
+  .correct {
+    color: #4ade80;
+  }
+  
+  .incorrect {
+    color: #f87171;
+  }
+  
+  #quoteInput {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: #1e293b;
+    color: #f1f5f9;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .stats span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e2e8f0;
+  }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  button:hover {
+    background: #1d4ed8;
+  }
+  
+  #keyboard {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    user-select: none;
+  }
+  
+  .keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+  
+  .key {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 40px;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    transition: 0.1s ease;
+    box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .key.wide {
+    min-width: 70px;
+  }
+  
+  .key.extra-wide {
+    min-width: 220px;
+  }
+  
+  .key.active {
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    box-shadow: 0 0 10px #38bdf8;
+  }
+  
+  @media (max-width: 768px) {
+    .key {
+      padding: 0.5rem;
+      min-width: 32px;
+      font-size: 0.8rem;
+    }
+  
+    .key.wide {
+      min-width: 60px;
+    }
+  
+    .key.extra-wide {
+      min-width: 150px;
+    }
+  
+    #quoteInput {
+      font-size: 1rem;
+    }
+  
+    .stats {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  
+
+  #completionMessage {
+    animation: fadeIn 0.5s ease;
+    color: #4ade80;
+    font-weight: bold;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  .modal-content {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  
+  #modalRestartBtn {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: #4ade80;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  #modalRestartBtn:hover {
+    background: #22c55e;
+  }
+  
