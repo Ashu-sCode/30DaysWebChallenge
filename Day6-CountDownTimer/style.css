@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f2027;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.time-box span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.time-box p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+#message {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
